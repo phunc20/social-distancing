@@ -20,6 +20,18 @@ Maybe I will write a small repo on perspective change later. For the moment bein
 
 I finished this repo _around February 2020_ and has since not polished it. Sorry for the delay and hope what I shared here may be useful.
 
+
+## How to use this repo
+01. Create a folder named `yolo-coco`
+02. Download the configuration and weight files to `yolo-coco` folder
+    ```bash
+    # from Joseph Redmon's github repo
+    curl -o yolo-coco/yolov3.cfg https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg
+    curl -o yolo-coco/yolov3.weights https://pjreddie.com/media/files/yolov3.weights
+    curl -o yolo-coco/coco.names https://github.com/pjreddie/darknet/blob/master/data/coco.names
+    ```
+Once having all the files for YOLO to run, just run any one of the python scripts.
+
 ## Example Result
 The following video is downloaded from and credited to some famous website on MOT.
 <br/>
