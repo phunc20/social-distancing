@@ -30,12 +30,28 @@ I finished this repo _around February 2020_ and has since not polished it. Sorry
     curl -o yolo-coco/yolov3.weights https://pjreddie.com/media/files/yolov3.weights
     curl -o yolo-coco/coco.names https://github.com/pjreddie/darknet/blob/master/data/coco.names
     ```
-Once having all the files for YOLO to run, just run any one of the python scripts.
+Once having all the files for YOLO to run, just run any one of the python scripts according to the usage described
+in each file.
+- `social_distance_detector.py`, `single_frame_detector.py` are scripts coming from pyimagesearch
+- `webcam_record.py` just provides a way to record a video from the webcam
+- `street_view_04_.py` is an intermediate test script
+- `image_BEV.py`, `video_BEV.py` both produce **Bird's Eye View**, one for image, the other for video
+	- These scripts when run will first open up a image window called `Draw` for the user to mark four points on, which correspond to a rectangle in the real world represented by the image. This rectangle is used to construct a perspective change of the ground on which people in the video/image walk.
 
-## Example Result
-The following video is downloaded from and credited to some famous website on MOT.
+For those who really get their hand dirty and play with this repo: You might find useful to tweak the parameters inside the script **`pyimagesearch/social_distancing_config.py`**.
+
+
+## Example results
+The following video is downloaded from and credited to [some famous website on MOT](https://motchallenge.net/vis/MOT17-02-SDP).
 <br/>
 
 ![example](figs/example.gif "mot-video")
 
+<br/>
+
+And the next one shows an example of how to applying one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, **clockwisely** or **counter-clockwisely**_
+
+<br/>
+
+![example2](figs/example2-one-punch-man.png "one-punch")
 

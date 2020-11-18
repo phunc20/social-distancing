@@ -1,5 +1,5 @@
 # USAGE
-# python single_frame_detector.py --i WFH-awards.jpg
+# python single_frame_detector.py -i WFH-awards.jpg
 # python single_frame_detector.py --input conference-AI.jpg
 
 # import the necessary packages

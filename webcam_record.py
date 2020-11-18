@@ -48,8 +48,11 @@ net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 # initialize the video stream and pointer to output video file
 print("[INFO] accessing video stream...")
 #vs = cv2.VideoCapture(args["input"] if args["input"] else 0)
-vs = cv2.VideoCapture(3)
-# i.e. streaming from a video file if specified, else from webcam0
+#vs = cv2.VideoCapture(3)
+vs = cv2.VideoCapture(0)
+## i.e. streaming from a video file if specified, else from webcam0, i.e. /dev/video0
+## (if you have a usb webcam connected on a linux machine, it might be at /dev/video3,
+## which corresponds to cv2.VideoCapture(0))
 writer = None
 
 # loop over the frames from the video stream

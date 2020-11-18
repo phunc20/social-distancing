@@ -1,7 +1,7 @@
 """
 USAGE:
 python street_view_04.py
-python street_view_04.py --i street-views/street-view-04.jpg
+python street_view_04.py -i street-views/street-view-04.jpg
 
 """
 import cv2

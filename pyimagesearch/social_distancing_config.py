@@ -13,10 +13,8 @@ USE_GPU = False
 # from each other
 #MIN_DISTANCE = 50
 #MIN_DISTANCE = 90
-# ftown3.mp4
 MIN_DISTANCE = 110
 
 #CORNERS = [(326, 48), (672, 90), (587, 256), (92, 152)]
 #CORNERS = [(293, 63), (643, 102), (508, 322), (9, 190)]
-# ftown3.mp4
 CORNERS = [(0, 96), (171, 107), (318, 405), (92, 432)]

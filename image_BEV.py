@@ -1,7 +1,6 @@
 """
 USAGE:
-python street_view_04.py
-python street_view_04.py --i street-views/street-view-04.jpg
+python image_BEV.py -i <image_file>
 
 """
 import argparse
