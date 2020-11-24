@@ -14,7 +14,7 @@ The following video is downloaded from and credited to [some famous website on M
 
 <br/>
 
-And the next one shows an example of how to applying one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, **clockwisely** or **counter-clockwisely**_
+And the next one shows an example of how to apply one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, **clockwisely** or **counter-clockwisely**_
 
 <br/>
 
