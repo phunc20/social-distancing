@@ -5,20 +5,20 @@ At that time, on the Internet there were not many people sharing how exactly the
 
 It was about the same time when [pyimagesearch](https://www.pyimagesearch.com/2020/06/01/opencv-social-distancing-detector/) published an article on the same topic. It was a good article, but it only slightly hinted at how it would further improve in the **bird's-eye view** direction 
 
-## Difficulties
-At that time, I only heard of **perspective change** but did not know exactly what it was and how to do it.
 
-The main idea of this repo is simple:
-01. Use **YOLO** to obtain bounding boxes on persons
-02. Take one representative point from each bounding box (our choice being the **center bottom** point)
-03. Use **perspective change** to rectify the plane on which the persons walk in the video, and calculate the distance between transformed representative points
+## Example results
+The following video is downloaded from and credited to [some famous website on MOT](https://motchallenge.net/vis/MOT17-02-SDP).
+<br/>
 
-Maybe I will write a small repo on perspective change later. For the moment being, I would just point the interested readers to
-- [a fine medium article](https://medium.com/acmvit/how-to-project-an-image-in-perspective-view-of-a-background-image-opencv-python-d101bdf966bc)
-- [pyimagesearch's article on perspective change](https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/)
-- [a decent book titled "Multiple View Geometry in Computer Vision"](https://www.robots.ox.ac.uk/~vgg/hzbook/)
+![example](figs/example.gif "mot-video")
 
-I finished this repo _around February 2020_ and has since not polished it. Sorry for the delay and hope what I shared here may be useful.
+<br/>
+
+And the next one shows an example of how to applying one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, **clockwisely** or **counter-clockwisely**_
+
+<br/>
+
+![example2](figs/example2-one-punch-man.png "one-punch")
 
 
 ## How to use this repo
@@ -41,17 +41,37 @@ in each file.
 For those who really get their hand dirty and play with this repo: You might find useful to tweak the parameters inside the script **`pyimagesearch/social_distancing_config.py`**.
 
 
-## Example results
-The following video is downloaded from and credited to [some famous website on MOT](https://motchallenge.net/vis/MOT17-02-SDP).
-<br/>
+## Environment
+This repos uses Python3. I think Python2 works as well, but the provided environment files might not work out of the box.
 
-![example](figs/example.gif "mot-video")
+It's recommended to use an virtual environment (virtualenv, miniconda, etc.). A `requirements.txt` file is provided
+below for `virtualenv` (or for `virtualenvwrapper` for that matter), and a `environment.yml` for `miniconda` users.
+- so either you don't use `miniconda`, then simply
+    ```bash
+    pip install -r requirements.txt
+    ```
+- or you're `miniconda` user, then
+    ```bash
+    conda env create -f environment.yml
+    # Then you should activate the environment before being able to run the scripts in this repo
+    conda activate sociald
+    ```
+    - I have also created another `environment_heavier.yml` because actually I was not familiar with miniconda, not knowing which way of installing the packages was the best practice. I will leave `environment_heavier.yml` there just in case.
 
-<br/>
 
-And the next one shows an example of how to applying one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, **clockwisely** or **counter-clockwisely**_
+## Difficulties
+At that time, I only heard of **perspective change** but did not know exactly what it was and how to do it.
 
-<br/>
+The main idea of this repo is simple:
+01. Use **YOLO** to obtain bounding boxes on persons
+02. Take one representative point from each bounding box (our choice being the **center bottom** point)
+03. Use **perspective change** to rectify the plane on which the persons walk in the video, and calculate the distance between transformed representative points
 
-![example2](figs/example2-one-punch-man.png "one-punch")
+Maybe I will write a small repo on perspective change later. For the moment being, I would just point the interested readers to
+- [a fine medium article](https://medium.com/acmvit/how-to-project-an-image-in-perspective-view-of-a-background-image-opencv-python-d101bdf966bc)
+- [pyimagesearch's article on perspective change](https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/)
+- [a decent book titled "Multiple View Geometry in Computer Vision"](https://www.robots.ox.ac.uk/~vgg/hzbook/)
+
+I finished this repo _around February 2020_ and has since not polished it. Sorry for the delay and hope what I shared here may be useful.
+
 
