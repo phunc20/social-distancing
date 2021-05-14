@@ -14,7 +14,7 @@ The following video is downloaded from and credited to [some famous website on M
 
 <br/>
 
-And the next one shows an example of how to apply one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, **clockwisely** or **counter-clockwisely**_
+And the next one shows an example of how to apply one of the scripts to an image: _Users of this repo should **mark four points** like shown in this screenshot, either **clockwisely** or **counter-clockwisely**_
 
 <br/>
 
@@ -28,7 +28,7 @@ And the next one shows an example of how to apply one of the scripts to an image
     # from Joseph Redmon's github repo
     curl -o yolo-coco/yolov3.cfg https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg
     curl -o yolo-coco/yolov3.weights https://pjreddie.com/media/files/yolov3.weights
-    curl -o yolo-coco/coco.names https://github.com/pjreddie/darknet/blob/master/data/coco.names
+    curl -o yolo-coco/coco.names https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names
     ```
 Once having all the files for YOLO to run, just run any one of the python scripts according to the usage described
 in each file.
@@ -38,14 +38,14 @@ in each file.
 - `image_BEV.py`, `video_BEV.py` both produce **Bird's Eye View**, one for image, the other for video
 	- These scripts when run will first open up a image window called `Draw` for the user to mark four points on, which correspond to a rectangle in the real world represented by the image. This rectangle is used to construct a perspective change of the ground on which people in the video/image walk.
 
-For those who really get their hand dirty and play with this repo: You might find useful to tweak the parameters inside the script **`pyimagesearch/social_distancing_config.py`**.
+For those of you who really want to get your hands dirty and to play with this repo: You might find useful to tweak the parameters inside the script **`pyimagesearch/social_distancing_config.py`**.
 
 
 ## Environment
-This repos uses Python3. I think Python2 works as well, but the provided environment files might not work out of the box.
+This repo uses Python3. I think Python2 might just work as well, but the provided environment files might not allow you to install everything correctly out of the box.
 
-It's recommended to use an virtual environment (virtualenv, miniconda, etc.). A `requirements.txt` file is provided
-below for `virtualenv` (or for `virtualenvwrapper` for that matter), and a `environment.yml` for `miniconda` users.
+It's recommended to use a virtual environment (virtualenv, miniconda, etc.). A `requirements.txt` file is provided
+below for `virtualenv` (or for `virtualenvwrapper` for that matter), and a `environment.yml` for `miniconda`.
 - so either you don't use `miniconda`, then simply
     ```bash
     pip install -r requirements.txt
@@ -60,18 +60,18 @@ below for `virtualenv` (or for `virtualenvwrapper` for that matter), and a `envi
 
 
 ## Difficulties
-At that time, I only heard of **perspective change** but did not know exactly what it was and how to do it.
+At the time of implementing this, I only slightly heard of **perspective change** but did not know exactly how to do it.
 
 The main idea of this repo is simple:
 01. Use **YOLO** to obtain bounding boxes on persons
-02. Take one representative point from each bounding box (our choice being the **center bottom** point)
-03. Use **perspective change** to rectify the plane on which the persons walk in the video, and calculate the distance between transformed representative points
+02. Take one representative point from each bounding box (my choice being the **center bottom** point)
+03. Use **perspective change** to rectify the plane on which the persons walk in the video, and calculate the distance between the transformed representative points
 
 Maybe I will write a small repo on perspective change later. For the moment being, I would just point the interested readers to
 - [a fine medium article](https://medium.com/acmvit/how-to-project-an-image-in-perspective-view-of-a-background-image-opencv-python-d101bdf966bc)
 - [pyimagesearch's article on perspective change](https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/)
 - [a decent book titled "Multiple View Geometry in Computer Vision"](https://www.robots.ox.ac.uk/~vgg/hzbook/)
 
-I finished this repo _around February 2020_ and has since not polished it. Sorry for the delay and hope what I shared here may be useful.
+I finished the code collected in this repo _around February 2020_ and have not polished it ever since. Sorry for the delay and hope what I shared here might be useful.
 
 
